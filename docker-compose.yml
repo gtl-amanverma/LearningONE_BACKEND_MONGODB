@@ -1,0 +1,15 @@
+services:
+  mongo:
+    image: mongo:7
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: mongo
+      MONGO_INITDB_DATABASE: learnmongodb
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongodata:/data/db
+
+volumes:
+  mongodata:
