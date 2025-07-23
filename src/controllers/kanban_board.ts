@@ -360,6 +360,7 @@ export const addTaskController: RequestHandler = async (
       taskStoryPoints: [],
       taskComments: [],
       taskStatus: boardId,
+      taskPriority: null,
       taskCreatedDate: new Date(),
     };
 

@@ -33,6 +33,7 @@ export interface TTaskType {
   taskStoryPoints: Array<TTaskStoryPointType> | null;
   taskComments: Array<TTaskCommentType> | null;
   taskStatus: string | null;
+  taskPriority: "High" | "Medium" | "Low" | null;
   taskCreatedDate: Date;
 }
 
@@ -292,6 +293,12 @@ const KanbanBoardSchema = new mongoose.Schema({
               taskStatus: {
                 type: String,
                 required: false,
+                default: null,
+              },
+              taskPriority: {
+                type: String,
+                required: false,
+                enum: ["High", "Medium", "Low"],
                 default: null,
               },
               taskCreatedDate: {
